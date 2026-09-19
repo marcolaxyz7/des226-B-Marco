@@ -2,8 +2,6 @@ let entrada = require('prompt-sync')();
 
 let usuario = 'klofis';
 let senha = '1475369'; 
-let usOk = false;
-let snOk = false; 
 let acessoPermitido = false;
 
 console.log('Insira seus dados para acessar o sistema!');
@@ -11,21 +9,9 @@ console.log('Insira seus dados para acessar o sistema!');
 let loginUsuario = entrada('Nome de usuário: '); 
 let loginSenha = entrada('Senha: ');  
 
-if (usuario == loginUsuario.toLowerCase()) {
-    console.log('Nome de usuário veficado com sucesso!');
-    usOk = true;        
-}
-
-if (senha == loginSenha) {
-    console.log('Senha veficada com sucesso!');     
-    snOk = true;   
-}
-
-if (usOk === true) {
-    if (snOk === true) {
-        acessoPermitido = true;
-    }
-}
+if (usuario == loginUsuario.toLowerCase() && senha == loginSenha) {
+    acessoPermitido = true;           
+} 
 
 if (acessoPermitido === true) {
     console.log('Acesso permitido!');    
