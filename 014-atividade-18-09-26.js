@@ -1,6 +1,5 @@
 let entrada = require("prompt-sync")();
 
-// 1. Cadastro dos 3 usuários usando variáveis simples
 let user1Nome = "joao";
 let user1Senha = "1234";
 let user1Saldo = 500;
@@ -45,32 +44,28 @@ if (!acessoPermitido) {
   let sacar = parseInt(entrada("Digite quanto você gostaria de sacar: "));
 
   if (sacar > 0 && sacar <= saldoAtual) {
-    // Atualiza o saldo
     saldoAtual = saldoAtual - sacar;
 
-    // === LÓGICA DE CÉDULAS EM CASCATA ===
-
-    // 1. Notas de 50
     let notas50 = Math.floor(sacar / 50);
-    let resto = sacar % 50; // O que sobrou para as próximas notas
+    let resto = sacar % 50;
 
-    // 2. Notas de 20 (calculadas em cima do que restou das de 50)
     let notas20 = Math.floor(resto / 20);
-    resto = resto % 20; // O que sobrou para as próximas notas
+    resto = resto % 20;
 
-    // 3. Notas de 10 (calculadas em cima do que restou das de 20)
     let notas10 = Math.floor(resto / 10);
-    resto = resto % 10; // O que sobrou para as próximas notas
+    resto = resto % 10;
 
-    // 4. Notas/Moedas de 2 (calculadas em cima do que restou das de 10)
+    let notas5 = Math.floor(resto / 5);
+    resto = resto % 5;
+
     let notas2 = Math.floor(resto / 2);
-    resto = resto % 2; // Sobra final (se o valor for ímpar, ex: R$ 1)
+    resto = resto % 2;
 
-    // Exibição dos resultados
     console.log("\n--- Cédulas Entregues ---");
     console.log("Notas de R$ 50: " + notas50);
     console.log("Notas de R$ 20: " + notas20);
     console.log("Notas de R$ 10: " + notas10);
+    console.log("Notas de R$ 5: " + notas5);
     console.log("Notas de R$ 2: " + notas2);
 
     if (resto > 0) {
