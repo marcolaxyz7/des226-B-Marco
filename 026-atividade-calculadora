@@ -1,0 +1,17 @@
+let entrada = require("prompt-sync")();
+
+let soma = 0;
+let contador = 0;
+let numero;
+
+do {
+  numero = Number(entrada("Digite um numero para ser somado (0 para parar): "));
+
+  if (numero !== 0) {
+    soma = soma + numero;
+    contador = contador + 1;
+  }
+} while (numero !== 0);
+
+console.log("Soma = " + soma);
+console.log("Quantidade de números: " + contador);

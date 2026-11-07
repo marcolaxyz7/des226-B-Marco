@@ -1,0 +1,23 @@
+const entrada = require("prompt-sync")();
+
+console.log("--- Gerador de Intervalo de Tabuadas --- \n");
+
+const numInicial = Number(entrada("Digite o número INICIAL do intervalo: "));
+const numFinal = Number(entrada("Digite o número FINAL do intervalo: "));
+
+console.log("\nGerando as tabuadas...\n");
+
+for (let i = numInicial; i <= numFinal; i++) {
+  console.log("===============================");
+  console.log(`         TABUADA DO ${i}         `);
+  console.log("===============================");
+
+  for (let j = 1; j <= 10; j++) {
+    let resultado = i * j;
+    console.log(`${i} x ${j} = ${resultado}`);
+  }
+
+  console.log("");
+}
+
+entrada("Pressione ENTER para encerrar o programa...");
