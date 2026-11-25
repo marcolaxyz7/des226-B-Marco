@@ -5,7 +5,7 @@ console.log("--- Gerador de Intervalo de Tabuadas --- \n");
 const numInicial = Number(entrada("Digite o número INICIAL do intervalo: "));
 const numFinal = Number(entrada("Digite o número FINAL do intervalo: "));
 
-console.log("\nGerando as tabuadas...\n");
+console.log("\nDigite em ordem crescente.\n");
 
 for (let i = numInicial; i <= numFinal; i++) {
   console.log("===============================");
